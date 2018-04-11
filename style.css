@@ -10,21 +10,37 @@ main
     width: 100%;
 }
 
-@media screen and (max-width: 1825 px)
-{
 
+@media only screen and (max-width: 1700px){
+    #name
+    {
+        opacity: 0;
+        display: none;
+    }
+    #pen
+    {
+         grid-column: 2;
+         left: 50px;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    
+    #hamburgerMenu {
+        opacity: 1;
+        display: block;
+    }
+
+    header>ul {
+        opacity: 0;
+    }
 }
 
 header{
    display: grid;
    height: 50px;
-   grid-template-columns: 25% 50% 25%;
-}
-
-header > ul
-{
-    margin:auto;
-    width: 40%;
+   grid-template-columns: 20% 60% 20%;
 }
 
 header > ul > li
@@ -44,14 +60,32 @@ header > ul > li
 
 #logo > img
 {
-    width: 120px;
+    width: 140px;
     height: 35px;
 }
 
 header > ul{
+
    grid-column: 2;
    grid-row: 1;
+    margin:auto;
 }
+header > ul > li
+{
+    margin-right: 40px;
+}
+
+#hamburgerMenu
+{
+    opacity: 0;
+    display: none;
+    position: relative;
+    margin: auto;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
 
 header > ul > li 
 {
@@ -76,7 +110,6 @@ header > ul > li:hover
 {
     grid-area: 1/1/1/1;
     margin: auto;
-    margin-left: 85%;
 }
 
 #user > img
@@ -89,15 +122,15 @@ header > ul > li:hover
 #pen
 {
     margin: auto;
-    margin-right: 90%;
+    margin-left: 20px;
 }
 
 #menu
 {
-    position: absolute;
-    right: -10%;
+    position: fixed;
+    right: -150px;
     top: 50px;
-    width: 10%;
+    width: 150px;
     height: 300px;
     background-color:rgba(22, 21, 21, 0.6);
     color: white;
@@ -107,7 +140,7 @@ header > ul > li:hover
 
 .hide
 {
-    transform: translateX(-200px);
+    transform: translateX(-150px);
 }
 
 .menuOption
@@ -123,6 +156,10 @@ header > ul > li:hover
     transform: scale(1.05) translateX(-15px);
 }
 
+#pen
+{
+
+}
 
 #pen > i
 {
@@ -137,6 +174,7 @@ header > ul > li:hover
 #name
 {
     margin: auto;
+    margin-top: 13px;
     font-weight: 900;
 }
 
@@ -147,7 +185,7 @@ header > ul > li:hover
 
 article
 {
-    background: url("img/pirates.jpg");
+    background: black url("img/pirates.jpg") no-repeat center;
     color: white;
     display: grid;
     height: 800px;
@@ -197,6 +235,8 @@ bold
     grid-row: 2;
     text-decoration: none;
     list-style-type: none;
+    text-align: left;
+    padding: 17px 0 0 0;
 }
 
 #stars > li
@@ -204,6 +244,11 @@ bold
     float: left;
     width: 25px;
     height: 25px;
+}
+
+#stars > li > i :hover
+{
+    background: white;
 }
 
 #space
